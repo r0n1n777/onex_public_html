@@ -16,8 +16,8 @@ define('LARAVEL_START', microtime(true));
 |
 */
 
-if (file_exists(__DIR__.'/../onex/storage/framework/maintenance.php')) {
-    require __DIR__.'/../onex/storage/framework/maintenance.php';
+if (file_exists(__DIR__.'/../repo/onex/storage/framework/maintenance.php')) {
+    require __DIR__.'/../repo/onex/storage/framework/maintenance.php';
 }
 
 /*
@@ -31,7 +31,7 @@ if (file_exists(__DIR__.'/../onex/storage/framework/maintenance.php')) {
 |
 */
 
-require __DIR__.'/../onex/vendor/autoload.php';
+require __DIR__.'/../repo/onex/vendor/autoload.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -44,7 +44,7 @@ require __DIR__.'/../onex/vendor/autoload.php';
 |
 */
 
-$app = require_once __DIR__.'/../onex/bootstrap/app.php';
+$app = require_once __DIR__.'/../repo/onex/bootstrap/app.php';
 
 $kernel = $app->make(Kernel::class);
 
