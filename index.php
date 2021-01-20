@@ -46,6 +46,11 @@ require __DIR__.'/../onex/vendor/autoload.php';
 
 $app = require_once __DIR__.'/../onex/bootstrap/app.php';
 
+// CHANGE THE DEFAULT PUBLIC PATH TO POINT OUTSIDE THE LARAVEL FOLDER WHICH IS public_html
+$app->bind('path.public', function() {
+    return __DIR__.'/../public_html/';
+});
+
 $kernel = $app->make(Kernel::class);
 
 $response = tap($kernel->handle(
