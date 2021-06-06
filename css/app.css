@@ -16958,13 +16958,6 @@ body {
   cursor: pointer;
 }
 
-.no-highlight {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -khtml-user-select: none;
-  -ms-user-select: none;
-}
-
 .lift {
   box-shadow: 0 0.15rem 1.75rem 0 rgba(33, 40, 50, 0.15);
   transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -20407,6 +20400,11 @@ pre[class*=language-] {
   color: #ff6666;
 }
 
+@media screen and (max-width: 600px) {
+  .binary-name {
+    transform: rotate(-90deg);
+  }
+}
 .center-cropped-sm {
   -o-object-fit: scale-down;
      object-fit: scale-down;
@@ -20456,6 +20454,15 @@ pre[class*=language-] {
   /* Center the image within the element */
   height: 500px;
   width: 500px;
+}
+
+.binary-img {
+  max-width: 150px;
+  width: 100%;
+}
+
+.text-responsive {
+  font-size: calc(100% + 1vw + 1vh);
 }
 
 [data-aos][data-aos][data-aos-duration="50"], body[data-aos-duration="50"] [data-aos] {
