@@ -1864,6 +1864,41 @@ __webpack_require__(/*! ./admin.js */ "./resources/js/admin.js");
 
 __webpack_require__(/*! ./pictureUpload.js */ "./resources/js/pictureUpload.js");
 
+__webpack_require__(/*! ./binary.js */ "./resources/js/binary.js");
+
+/***/ }),
+
+/***/ "./resources/js/binary.js":
+/*!********************************!*\
+  !*** ./resources/js/binary.js ***!
+  \********************************/
+/***/ (() => {
+
+$('.binary-button').on('click', function () {
+  var position = $(this).attr('position');
+  var referrer = $(this).attr('referrer');
+  $('.binary-referrer-id').attr('value', referrer);
+  $('.binary-position').attr('value', position);
+  console.log(position, referrer);
+});
+$('.view-user-button').on('click', function () {
+  var fname = $(this).attr('fname');
+  var lname = $(this).attr('lname');
+  var uname = $(this).attr('uname');
+  var gender = $(this).attr('gender');
+  var email = $(this).attr('email');
+  var phone = $(this).attr('phone');
+  var datejoined = $(this).attr('datejoined');
+  var imgpath = $(this).attr('imgpath');
+  $('.name').html(fname + ' ' + lname);
+  $('.uname').html(uname);
+  $('.gender').html(gender);
+  $('.email').html(email);
+  $('.phone').html(phone);
+  $('.datejoined').html('Date Joined: ' + datejoined);
+  $('.imgpath').html('<img class="rounded-circle img-fluid" src="' + imgpath + '" />');
+});
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -38611,7 +38646,7 @@ process.umask = function() { return 0; };
 /******/ 					__webpack_require__.m[moduleId] = moreModules[moduleId];
 /******/ 				}
 /******/ 			}
-/******/ 			if(runtime) runtime(__webpack_require__);
+/******/ 			if(runtime) var result = runtime(__webpack_require__);
 /******/ 			if(parentChunkLoadingFunction) parentChunkLoadingFunction(data);
 /******/ 			for(;i < chunkIds.length; i++) {
 /******/ 				chunkId = chunkIds[i];
@@ -38620,7 +38655,7 @@ process.umask = function() { return 0; };
 /******/ 				}
 /******/ 				installedChunks[chunkIds[i]] = 0;
 /******/ 			}
-/******/ 			__webpack_require__.O();
+/******/ 			return __webpack_require__.O(result);
 /******/ 		}
 /******/ 		
 /******/ 		var chunkLoadingGlobal = self["webpackChunk"] = self["webpackChunk"] || [];
